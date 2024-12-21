@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="card mb-3 mt-4">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="{{ product.name }}">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <div class="d-flex">
+            <p class="me-3">Views: {{ product.views }}</p>
+            <p>09/12/2024 16:28</p>
+          </div>
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">Description: {{ product.description }}</p>
+          <a href="{% url 'update_product' product.id %}" class="btn btn-primary">Update Product</a>
+          <a href="{% url 'delete_product' product.id %}" class="btn btn-danger">Delete Product</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+
